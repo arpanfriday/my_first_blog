@@ -8,7 +8,7 @@
     </div>
 
     <div>
-      <p>published: 02.11.2018, 23:14</p>
+      <!-- <p>published: 02.11.2018, 23:14</p>
       <h2><a href="">My First Post</a></h2>
       <p>This is my first blog post. Now i am writing in html and it is really so much interesting. i have never imagined that programming could be so much intesesting.</p>
     </div>
@@ -16,7 +16,14 @@
     <div>
       <p>published: 02.11.2018, 23:37</p>
       <h2><a href="">My second Post</a></h2>
-      <p>This is my second post. Still in html. after i complete this, next i need to pload it to github. these are so much fascinating to me.</p>
+      <p>This is my second post. Still in html. after i complete this, next i need to pload it to github. these are so much fascinating to me.</p> -->
+      {% for post in posts %}
+        <div>
+          <p>published: {{ post.published_date }}</p>
+          <h1><a href="">{{ post.title }}</a></h1>
+          <p>{{ post.text | linebreaksbr }}</p>
+        </div>
+      {% endfor %}
     </div>
   </body>
 </html>
